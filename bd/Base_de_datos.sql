@@ -36,8 +36,12 @@ nivel_prioridad int(1) NOT NULL,
 tipo_problema varchar(25) NOT NULL,
 solucion text NULL)
 
-CREATE TABLE IF NOT EXISTS contacto(
-tel varchar(14) NOT NULL,
+CREATE TABLE IF NOT EXISTS correo(
 correo VARCHAR(40) NOT NULL,
+id_cliente int(5) NOT NULL
+foreign key (id_cliente) REFERENCES clientes(id_clientes) ON DELETE RESTRICT ON UPDATE CASCADE)
+
+CREATE TABLE IF NOT EXISTS telefono(
+tel varchar(14) NOT NULL,
 id_cliente int(5) NOT NULL
 foreign key (id_cliente) REFERENCES clientes(id_clientes) ON DELETE RESTRICT ON UPDATE CASCADE)
