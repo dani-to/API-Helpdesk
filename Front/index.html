@@ -162,17 +162,23 @@
                   <h5 class="card-title">Soporte <span>| Ticket de ayuda</span></h5>
 
                   <div class="row mb-3">
-                      <label for="firstNombre" class="col-md-4 col-lg-3 col-form-label">Nombre</label>
+                      <label for="firstNombre" class="col-md-4 col-lg-3 col-form-label" >Nombre(s)</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="firstNombre" type="text" class="form-control" id="firstNombre">
+                        <input name="firstNombre" type="text" class="form-control" id="firstNombre" disabled> 
                       </div>
                   </div>
                   <div class="row mb-3">
-                      <label for="lastName" class="col-md-4 col-lg-3 col-form-label">Apellidos</label>
+                      <label for="lastName" class="col-md-4 col-lg-3 col-form-label">Apellido Paterno</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="lastName" type="text" class="form-control" id="lastName">
+                        <input name="lastName" type="text" class="form-control" id="lastName" disabled>
                       </div>
                   </div>
+                  <div class="row mb-3">
+                    <label for="lastName" class="col-md-4 col-lg-3 col-form-label">Apellido Materno</label>
+                    <div class="col-md-8 col-lg-9">
+                      <input name="lastName" type="text" class="form-control" id="lastName" disabled>
+                    </div>
+                </div>
                   <div class="row mb-3">
                       <label for="idTicket" class="col-md-4 col-lg-3 col-form-label">ID del Ticket</label>
                       <div class="col-md-8 col-lg-9">
@@ -180,15 +186,27 @@
                       </div>
                   </div>
                   <div class="row mb-3">
+                    <label for="articulo" class="col-md-4 col-lg-3 col-form-label">Artículo</label>
+                    <div class="col-md-8 col-lg-9">
+                      <input class="form-control" type="text" placeholder="Nombre del artículo" aria-label="Disabled input example" disabled>
+                    </div>
+                </div>
+                  <div class="row mb-3">
                       <label for="eMail" class="col-md-4 col-lg-3 col-form-label">eMail</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="eMail" type="text" class="form-control" id="eMail">
+                        <input name="eMail" type="email" class="form-control" id="eMail">
                       </div>
                   </div>
+                  <div class="row mb-3">
+                    <label for="telephone" class="col-md-4 col-lg-3 col-form-label">Teléfono</label>
+                    <div class="col-md-8 col-lg-9">
+                      <input name="telephone" type="number" class="form-control" id="telephone">
+                    </div>
+                </div>
                   <div class="mb-3 row">
                     <label for="inputProblem" class="col-md-4 col-lg-3 col-form-label">Tipo de problema</label>
                     <div class="col-md-8 col-lg-9">
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" aria-label="Default select example"disabled>
                             <option selected>Elige una opción</option>
                             <option value="1">Reportes</option>
                             <option value="2">Aclaración de dudas</option>
@@ -204,9 +222,36 @@
                       <textarea name="about" class="form-control" id="about" style="height: 100px">...</textarea>
                     </div>
                   </div>
-                  <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="inputGroupFile02">
-                    <label class="input-group-text" for="inputGroupFile02">Subir</label>
+                  <span>Foto adjuntada...</span>
+                  <img src="https://th.bing.com/th/id/R.0781bcc4c8da585cc7889169c4e1c2c2?rik=t9clK%2bQ94rv9sQ&pid=ImgRaw&r=0" class="img-fluid" alt="...">
+                  
+                  <h5 class="card-title">Soporte <span>| Proceso del ticket</span></h5>
+                  <div class="mb-3 row">
+                    <label for="prio" class="col-md-4 col-lg-3 col-form-label">Nivel de prioridad</label>
+                    <div class="col-md-8 col-lg-9">
+                        <select class="form-select" aria-label="Default select example" id="prio">
+                            <option selected>Elige una opción</option>
+                            <option value="1">Baja</option>
+                            <option value="2">Media</option>
+                            <option value="3">Alta</option>
+                          </select>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="solProcess" class="col-md-4 col-lg-3 col-form-label">Proceso de solución</label>
+                    <div class="col-md-8 col-lg-9">
+                      <textarea name="solProcess" class="form-control" id="solProcess" style="height: 100px">...</textarea>
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="status" class="col-md-4 col-lg-3 col-form-label">Estado del ticket</label>
+                    <div class="col-md-8 col-lg-9">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Elige una opción</option>
+                            <option value="0">Solucionado</option>
+                            <option value="1">Pendiente</option>
+                          </select>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -249,7 +294,17 @@
                   <tr>
                     <th scope="row"><a href="#">#2457</a></th>
                     <td><a href="#" class="text-primary">Asunto de ejemplo xd</a></td>
-                    <td><span class="badge bg-danger">No solucionado</span></td>
+                    <td><span class="badge bg-warning">Pendiente</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><a href="#">#2049</a></th>
+                    <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
+                    <td><span class="badge bg-success">Solucionado</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><a href="#">#2049</a></th>
+                    <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
+                    <td><span class="badge bg-success">Solucionado</span></td>
                   </tr>
                   <tr>
                     <th scope="row"><a href="#">#2147</a></th>
@@ -257,9 +312,9 @@
                     <td><span class="badge bg-warning">Pendiente</span></td>
                   </tr>
                   <tr>
-                    <th scope="row"><a href="#">#2049</a></th>
-                    <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                    <td><span class="badge bg-success">Solucionado</span></td>
+                    <th scope="row"><a href="#">#2147</a></th>
+                    <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
+                    <td><span class="badge bg-warning">Pendiente</span></td>
                   </tr>
                 </tbody>
               </table>

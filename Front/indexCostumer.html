@@ -117,16 +117,22 @@
                   <h5 class="card-title">Soporte <span>| Ticket de ayuda</span></h5>
 
                   <div class="row mb-3">
-                      <label for="firstNombre" class="col-md-4 col-lg-3 col-form-label">Nombre</label>
+                      <label for="firstNombre" class="col-md-4 col-lg-3 col-form-label">Nombre(s)</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="firstNombre" type="text" class="form-control" id="firstNombre">
                       </div>
                   </div>
                   <div class="row mb-3">
-                      <label for="lastName" class="col-md-4 col-lg-3 col-form-label">Apellidos</label>
+                      <label for="lastName1" class="col-md-4 col-lg-3 col-form-label">Apellido Paterno</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="lastName" type="text" class="form-control" id="lastName">
+                        <input name="lastName1" type="text" class="form-control" id="lastName1">
                       </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="lastName2" class="col-md-4 col-lg-3 col-form-label">Apellido Materno</label>
+                    <div class="col-md-8 col-lg-9">
+                      <input name="lastName2" type="text" class="form-control" id="lastName2">
+                    </div>
                   </div>
                   <div class="row mb-3">
                       <label for="idTicket" class="col-md-4 col-lg-3 col-form-label">ID del Ticket</label>
@@ -135,29 +141,36 @@
                       </div>
                   </div>
                   <div class="row mb-3">
+                    <label for="articulo" class="col-md-4 col-lg-3 col-form-label">Artículo</label>
+                    <div class="col-md-8 col-lg-9">
+                      <input class="form-control" type="text" placeholder="Nombre del artículo" aria-label="Disabled input example" disabled>
+                    </div>
+                </div>
+                  <div class="row mb-3">
                       <label for="eMail" class="col-md-4 col-lg-3 col-form-label">Correo</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="eMail" type="text" class="form-control" id="eMail">
+                        <input name="eMail" type="email" class="form-control" id="eMail">
                       </div>
                   </div>
                   <div class="row mb-3">
+                    <label for="eMail2" class="col-md-4 col-lg-3 col-form-label">Correo secundario</label>
+                    <div class="col-md-8 col-lg-9">
+                      <input name="eMail2" type="email" class="form-control" id="eMail2">
+                    </div>
+                </div>
+                  <div class="row mb-3">
                     <label for="telephone" class="col-md-4 col-lg-3 col-form-label">Número de teléfono</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="telephone" type="text" class="form-control" id="telephone">
+                      <input name="telephone" type="number" class="form-control" id="telephone">
                     </div>
                 </div>
                 <div class="row mb-3">
-                  <label for="telephone2" class="col-md-4 col-lg-3 col-form-label">Otro número: </label>
+                  <label for="telephone2" class="col-md-4 col-lg-3 col-form-label">Otro número </label>
                   <div class="col-md-8 col-lg-9">
-                    <input name="telephone2" type="text" class="form-control" id="telephone2">
+                    <input name="telephone2" type="number" class="form-control" id="telephone2">
                   </div>
               </div>
-                  <div class="row mb-3">
-                    <label for="eMail2" class="col-md-4 col-lg-3 col-form-label">Correo secundario</label>
-                    <div class="col-md-8 col-lg-9">
-                      <input name="eMail2" type="text" class="form-control" id="eMail2">
-                    </div>
-                </div>
+                  
                   <div class="mb-3 row">
                     <label for="inputProblem" class="col-md-4 col-lg-3 col-form-label">Tipo de problema</label>
                     <div class="col-md-8 col-lg-9">
@@ -181,6 +194,7 @@
                     <input type="file" class="form-control" id="inputGroupFile02">
                     <label class="input-group-text" for="inputGroupFile02">Subir</label>
                   </div>
+                  <button type="submit" class="btn btn-primary allign-right">Enviar</button>
                 </div>
               </div>
 
