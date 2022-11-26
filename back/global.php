@@ -1,18 +1,14 @@
 <?php
-//creado por Nayelli el 17 de noviembre
-
 //Definir Servidor
-define("DB_HOST", "localhost");
+define("DB_HOST", "v2ray.dosedgames.tk");
 
 //Define nombre de BD
-define("DB_NAME","help");
+define("DB_NAME","helpdesk");
 
 //usuario bd 
-define("DB_USERNAME","root");
+define("DB_USERNAME","Pichardo");
 
 //password
-define("DB_PASSWORD","");
-
-
+define("DB_PASSWORD","pichardo121289");
 
 ?>

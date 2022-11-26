@@ -1,6 +1,5 @@
 <?php
 
-//creado por David y Nayelli el 18 de noviembre
 	require_once("global.php");
  
 	$conexion = new mysqli(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
@@ -18,7 +17,7 @@
 		return $query;
 	}
 
-	function ejecutarConsultaSimple($sql){
+	function ejecutarConsultaSimpleFila($sql){
 		global $conexion;
 		$query = $conexion->query($sql);
 		$row = $query->fetch_all();

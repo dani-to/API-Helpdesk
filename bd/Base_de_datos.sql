@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS empleados (
 id_empleado int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY
 )
 
-CREATE TABLE IF NOT EXISTS ventas(
+CREATE TABLE IF NOT EXISTS venta (
 id_venta int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY
 )
 
@@ -14,7 +14,7 @@ a_materno VARCHAR(30) NOT NULL,
 estatus boolean NOT NULL
 )
 
-CREATE TABLE IF NOT EXISTS tickets(
+CREATE TABLE IF NOT EXISTS ticket(
 folio int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 fecha_creacion datetime DEFAULT current_timestamp,
 id_empleado int(5) NULL,
@@ -36,12 +36,12 @@ nivel_prioridad int(1) NOT NULL,
 tipo_problema varchar(25) NOT NULL,
 solucion text NULL)
 
-CREATE TABLE IF NOT EXISTS correos(
+CREATE TABLE IF NOT EXISTS correo(
 correo VARCHAR(40) NOT NULL,
 id_cliente int(5) NOT NULL
 foreign key (id_cliente) REFERENCES clientes(id_clientes) ON DELETE RESTRICT ON UPDATE CASCADE)
 
-CREATE TABLE IF NOT EXISTS telefonos(
+CREATE TABLE IF NOT EXISTS telefono(
 tel varchar(14) NOT NULL,
 id_cliente int(5) NOT NULL
 foreign key (id_cliente) REFERENCES clientes(id_clientes) ON DELETE RESTRICT ON UPDATE CASCADE)
