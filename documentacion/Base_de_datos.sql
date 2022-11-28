@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS helpdesk.incidente(
 id_incidente int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nivel_prioridad int(1) NOT NULL,
 tipo_problema varchar(25) NOT NULL,
+proceso_solucion text NOT NULL,
 solucion text NULL);
 
 CREATE TABLE IF NOT EXISTS helpdesk.ticket(
