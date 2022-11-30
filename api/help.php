@@ -4,7 +4,7 @@
 
 	class help{
 		function obtenerTicket(){
-			$query = "SELECT folio, estatus FROM ticket";
+			$query = "SELECT folio, estatus FROM tickets";
 
 			return ejecutarConsultaSimpleFila($query);
 		}
