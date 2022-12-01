@@ -4,5 +4,5 @@ $params=[
   "id_cliente"=>"1",
   "correo"=>"naye@hotmail.com"
   ];
-$result=insertcorreos($params);
+$result=insertcorreo($params);
 echo $result;
