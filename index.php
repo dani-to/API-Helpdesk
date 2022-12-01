@@ -3,7 +3,4 @@
 
 	$api = new ApiTicket();
 	$api->getAll();
-
-	<customErrors mode="Off" /> 
-	<httpErrors errorMode="Detailed"></httpErrors>
 ?>
