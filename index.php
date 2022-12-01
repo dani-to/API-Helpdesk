@@ -1,5 +1,5 @@
 <?php
-	include_once 'apihelp.php';
+	include_once 'api/apihelp.php';
 
 	$api = new ApiTicket();
 	$api->getAll();
