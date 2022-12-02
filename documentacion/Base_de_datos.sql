@@ -29,12 +29,13 @@ id_incidente int(5) NOT NULL,
 id_venta int(5) NOT NULL,
 descripcion text NOT NULL,
 imagen varchaR(100) NULL,
+estatus boolean NOT NULL,
 fecha_edicion datetime DEFAULT current_timestamp,
 fecha_solucion datetime NULL,
 foreign key (id_empleado) REFERENCES empleados(id_empleado) ON DELETE RESTRICT ON UPDATE CASCADE,
-foreign key (id_venta) REFERENCES venta(id_venta) ON DELETE RESTRICT ON UPDATE CASCADE,
+foreign key (id_venta) REFERENCES ventas(id_venta) ON DELETE RESTRICT ON UPDATE CASCADE,
 foreign key (id_cliente) REFERENCES clientes(id_clientes) ON DELETE RESTRICT ON UPDATE CASCADE,
-foreign key (id_incidente) REFERENCES incidente(id_incidente) ON DELETE RESTRICT ON UPDATE CASCADE);
+foreign key (id_incidente) REFERENCES incidentes(id_incidente) ON DELETE RESTRICT ON UPDATE CASCADE);
 
 CREATE TABLE IF NOT EXISTS helpdesk.correos(
 correo VARCHAR(40) NOT NULL,

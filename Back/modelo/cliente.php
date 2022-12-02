@@ -58,7 +58,7 @@ class CLIENTE extends CONEXION{
 
     public function queryInsertCliente(){
         $query="INSERT into `clientes`(`id_clientes`, `nombre`, `a_paterno`, `a_materno`) 
-        VALUES ('".$this->getIdCliente()."', '".$this->getNombre()."', '".$this->getApaterno()."', '".$this->getAmaterno()."')";
+        VALUES ('".$this->getNombre()."', '".$this->getApaterno()."', '".$this->getAmaterno()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

@@ -6,9 +6,17 @@ function consultaTicket(){
    return json_encode($result);
 }
 
-function insertTicket(){
+function insertTicket($params){
     include_once "../modelo/ticket.php";
     $TICKET = new TICKET();
+    $TICKET -> setFolio($params['folio']);
+    $TICKET -> setIdEmpleado($params['id_empleado']);
+    $TICKET -> setIdCliente($params['id_cliente']);
+    $TICKET -> setIdIncidente($params['id_incidente']);
+    $TICKET -> setIdVenta($params['id_venta']);
+    $TICKET -> setDescripcion($params['descripcion']);
+    $TICKET -> setEstatus($params['estatus']);
+    $TICKET -> setImagen($params['imagen']);
     return $TICKET->queryInsertTicket();
 }
 

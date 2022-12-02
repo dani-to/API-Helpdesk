@@ -6,8 +6,10 @@ function consultaCorreo(){
    return json_encode($result);
 }
 
-function insertCorreo(){
+function insertCorreo($params){
     include_once "../modelo/correo.php";
     $CORREO = new CORREO();
+    $CORREO ->setCorreo($params['correo']);
+    $CORREO ->setIdCliente($params['id_cliente']);
     return $CORREO->queryInsertCorreo();
 }

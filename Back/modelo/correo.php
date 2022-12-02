@@ -36,7 +36,7 @@ class CORREO extends CONEXION{
         return $resultado;
     }
 
-    public function queryInsertCorreo{
+    public function queryInsertCorreo(){
         $query="INSERT into `correos`(`id_cliente`, `correo`) 
         VALUES ('".$this->getIdCliente()."', '".$this->getCorreo()."')";
         $this->connect();
