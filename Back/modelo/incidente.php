@@ -67,8 +67,8 @@ class INCIDENTE extends CONEXION{
     }
 
     public function queryInsertIncidente(){
-        $query="INSERT into `incidentes`(`id_incidente`, `nivel_prioridad`, `tipo_problema`, `proceso_solucion`, `solucion`) 
-        VALUES ('".$this->getIdIncidente()."', '".$this->getNivelPrioridad()."', '".$this->getTipoProblema()."', '".$this->getProcesoSolucion()."', '".$this->getSolucion()."')";
+        $query="INSERT into `incidentes`( `tipo_problema`) 
+        VALUES ( '".$this->getTipoProblema()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -81,6 +81,14 @@ class INCIDENTE extends CONEXION{
          `solucion` = '".$this->getSolucion()."' WHERE `incidentes`.`id_incidente` = '".$this->getIdIncidente()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryconsultaIncidenteId(){
+        $query="SELECT id_incidentes FROM incidente ORDER BY id_incidente DESC LIMIT 1";
+        $this->connect();
+        $resultado = $this->getData($query);
         $this->close();
         return $resultado;
     }

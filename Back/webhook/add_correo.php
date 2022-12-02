@@ -1,8 +1,8 @@
 <?php
 include_once"../control/controlcorreo.php";
 $params=[
-  "id_cliente"=>"1",
-  "correo"=>"naye@hotmail.com"
+  "id_cliente"=>$_POST['id_cliente'],
+  "correo"=>$_POST['correo']
   ];
 $result=insertcorreo($params);
 echo $result;

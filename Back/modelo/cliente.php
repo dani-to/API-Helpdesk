@@ -57,10 +57,18 @@ class CLIENTE extends CONEXION{
     }
 
     public function queryInsertCliente(){
-        $query="INSERT into `clientes`(`id_clientes`, `nombre`, `a_paterno`, `a_materno`) 
+        $query="INSERT into `clientes`(`nombre`, `a_paterno`, `a_materno`) 
         VALUES ('".$this->getNombre()."', '".$this->getApaterno()."', '".$this->getAmaterno()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryconsultaClienteId(){
+        $query="SELECT id_clientes FROM clientes ORDER BY id_clientes DESC LIMIT 1";
+        $this->connect();
+        $resultado = $this->getData($query);
         $this->close();
         return $resultado;
     }

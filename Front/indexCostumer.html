@@ -116,10 +116,18 @@
                 <div class="card-body">
                   <h5 class="card-title">Soporte <span>| Ticket de ayuda</span></h5>
                   <form id="fmr-costumer">
-                  <div class="row mb-3">
-                      <label for="firstNombre" class="col-md-4 col-lg-3 col-form-label">Nombre(s)</label>
+                    <div class="row mb-3">
                       <div class="col-md-8 col-lg-9">
-                        <input name="firstNombre" type="text" class="form-control" id="firstNombre">
+                        <input name="id_cliente" type="hidden" class="form-control" id="id_cliente">
+                      </div>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="id_incidente" type="hidden" class="form-control" id="id_incidente">
+                      </div>
+                  </div>
+                  <div class="row mb-3">
+                      <label for="nombre" class="col-md-4 col-lg-3 col-form-label">Nombre(s)</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="nombre" type="text" class="form-control" id="nombre">
                       </div>
                   </div>
                   <div class="row mb-3">
@@ -169,12 +177,13 @@
                   <div class="col-md-8 col-lg-9">
                     <input name="telephone2" type="text" class="form-control" id="telephone2">
                   </div>
-              </div>
+                </div>
+
                   
                   <div class="mb-3 row">
                     <label for="inputProblem" class="col-md-4 col-lg-3 col-form-label">Tipo de problema</label>
                     <div class="col-md-8 col-lg-9">
-                        <select class="form-select" aria-label="Default select example">
+                        <select id="tipo" class="form-select" aria-label="Default select example">
                             <option selected>Elige una opción</option>
                             <option value="1">Reportes</option>
                             <option value="2">Aclaración de dudas</option>
@@ -253,6 +262,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../Back/service/add_ticket.js"></script>
 
 </body>
 

@@ -15,3 +15,10 @@ function insertCliente($params){
     $CLIENTE ->setAmaterno($params['a_materno']);
     return $CLIENTE->queryInsertCliente();
 }
+
+function consultaClienteID(){
+    include_once "../modelo/cliente.php";
+    $CLIENTE = new CLIENTE();
+    $result = $CLIENTE->queryConsultaClienteID();
+   return json_encode($result);
+}

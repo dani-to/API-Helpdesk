@@ -15,9 +15,9 @@ a_materno VARCHAR(30) NOT NULL
 
 CREATE TABLE IF NOT EXISTS helpdesk.incidentes(
 id_incidente int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-nivel_prioridad int(1) NOT NULL,
+nivel_prioridad int(1) NULL,
 tipo_problema varchar(25) NOT NULL,
-proceso_solucion text NOT NULL,
+proceso_solucion text NULL,
 solucion text NULL);
 
 CREATE TABLE IF NOT EXISTS helpdesk.tickets(
