@@ -9,7 +9,6 @@ function consultaCliente(){
 function insertCliente($params){
     include_once "../modelo/cliente.php";
     $CLIENTE = new CLIENTE();
-    $CLIENTE ->setIdCliente($params['id_cliente']);
     $CLIENTE ->setNombre($params['nombre']);
     $CLIENTE ->setApaterno($params['a_paterno']);
     $CLIENTE ->setAmaterno($params['a_materno']);

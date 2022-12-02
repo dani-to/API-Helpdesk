@@ -6,8 +6,10 @@ function consultaTelefono(){
    return json_encode($result);
 }
 
-function insertTelefono(){
+function insertTelefono($params){
     include_once "../modelo/telefono.php";
     $TELEFONO = new TELEFONO();
+    $TELEFONO ->setTelefono($params['telefono']);
+    $TELEFONO ->setIdCliente($params['id_cliente']);
     return $TELEFONO->queryInsertTelefono();
 }

@@ -1,10 +1,9 @@
 <?php 
 include_once"../control/controlcliente.php";
 $params=[
-	"id_cliente"=>"1",
-	"nombre"=>"carlos",
-	"a_paterno"=>"lopez",
-	"a_materno"=>"perez"
+	"nombre"=>$_POST['nombre'],
+	"a_paterno"=>$_POST['apaterno'],
+	"a_materno"=>$_POST['amaterno']
 ];
 $result=insertCliente($params);
 echo $result;

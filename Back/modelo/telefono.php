@@ -36,7 +36,7 @@ class TELEFONO extends CONEXION{
         return $resultado;
     }
 
-    public function queryInsertTelefono{
+    public function queryInsertTelefono(){
         $query="INSERT into `telefonos`(`id_cliente`, `tel`) 
         VALUES ('".$this->getIdCliente()."', '".$this->getTelefono()."')";
         $this->connect();

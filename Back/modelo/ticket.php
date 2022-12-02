@@ -8,6 +8,7 @@ class TICKET extends CONEXION{
     private $id_venta;
     private $descripcion;
     private $imagen;
+    private $estatus;
   
     /**
      * @return mixed
@@ -78,8 +79,17 @@ class TICKET extends CONEXION{
         $this->imagen = $imagen;
     }
 
+    public function getEstatus()
+    {
+        return $this->estatus;
+    }
+    public function setEstatus($estatus): void
+    {
+        $this->estatus = $estatus;
+    }
+
     public function queryconsultaTicket(){
-        $query="SELECT `folio`, `fecha_creacion`, `id_empleado`, `id_cliente`, `id_incidente`, `id_venta`, `descripcion`, `imagen`, `fecha_edicion`, `fecha_solucion` FROM `tickets`";
+        $query="SELECT `folio`, `fecha_creacion`, `id_empleado`, `id_cliente`, `id_incidente`, `id_venta`, `descripcion`, `imagen`, `estatus`, `fecha_edicion`, `fecha_solucion` FROM `tickets`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -87,8 +97,8 @@ class TICKET extends CONEXION{
     }
 
     public function queryInsertTicket(){
-        $query="INSERT into `tickets`(`folio`, `fecha_creacion`, `id_empleado`, `id_cliente`, `id_incidente`, `id_venta`, `descripcion`, `imagen`, `fecha_edicion`) 
-        VALUES ('".$this->getFolio()."', current_timestamp(), '".$this->getIdEmpleado()."', '".$this->getIdCliente()."', '".$this->getIdIncidente()."', '".$this->getIdVenta()."', '".$this->getDescripcion()."', '".$this->getImagen()."', current_timestamp())";
+        $query="INSERT into `tickets`(`folio`, `fecha_creacion`, `id_empleado`, `id_cliente`, `id_incidente`, `id_venta`, `descripcion`, `imagen`, `estatus`, `fecha_edicion`) 
+        VALUES ('".$this->getFolio()."', current_timestamp(), '".$this->getIdEmpleado()."', '".$this->getIdCliente()."', '".$this->getIdIncidente()."', '".$this->getIdVenta()."', '".$this->getDescripcion()."', '".$this->getImagen()."', '".$this->getEstatus()."', current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -96,7 +106,7 @@ class TICKET extends CONEXION{
     }
 
     public function queryUpdateTicket(){
-        $query="UPDATE `tickets` SET `id_empleado` = '".$this->getIdEmpleado()."', `fecha_edicion` = current_timestamp(), `fecha_solucion` = current_timestamp() WHERE `tickets`.`id_asignatura` = '".$this->getIdAsignatura()."'";
+        $query="UPDATE `tickets` SET `id_empleado` = '".$this->getIdEmpleado()."', `fecha_edicion` = current_timestamp(), `fecha_solucion` = current_timestamp(), `estatus` ='".$this->getEstatus()."' WHERE `tickets`.`id_asignatura` = '".$this->getIdAsignatura()."'";
         //retrun $query;
         $this->connect();
         $resultado= $this->executeInstruction($query);
