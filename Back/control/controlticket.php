@@ -1,7 +1,8 @@
 <?php
-function consultaTicket(){
+function consultaTicket($folio){
     include_once "../modelo/ticket.php";
     $TICKET = new TICKET();
+    $TICKET -> setFolio($folio);
     $result = $TICKET->queryConsultaTicket();
    return json_encode($result);
 }
@@ -20,8 +21,10 @@ function insertTicket($params){
     return $TICKET->queryInsertTicket();
 }
 
-function updateTicket(){
+function updateTicket($params){
     include_once "../modelo/ticket.php";
     $TICKET = new TICKET();
+    $TICKET -> setFolio($params['folio']);
+    $TICKET -> setEstatus($params['estatus']);
     return $TICKET->queryUpdateTicket();
 }

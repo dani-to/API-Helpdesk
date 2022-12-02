@@ -1,7 +1,8 @@
 <?php
-function consultaCorreo(){
+function consultaCorreo($id_cliente){
     include_once "../modelo/correo.php";
     $CORREO = new CORREO();
+    $CORREO ->setIdCliente($id_cliente);
     $result = $CORREO->queryConsultaCorreo();
    return json_encode($result);
 }

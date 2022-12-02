@@ -1,7 +1,8 @@
 <?php
-function consultaCliente(){
+function consultaCliente($id_cliente){
     include_once "../modelo/cliente.php";
     $CLIENTE = new CLIENTE();
+    $CLIENTE ->setIdCliente($id_cliente);
     $result = $CLIENTE->queryConsultaCliente();
    return json_encode($result);
 }

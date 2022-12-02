@@ -1,7 +1,8 @@
 <?php
-function consultaTelefono(){
+function consultaTelefono($id_cliente){
     include_once "../modelo/telefono.php";
     $TELEFONO = new TELEFONO();
+    $TELEFONO ->setIdCliente($id_cliente);
     $result = $TELEFONO->queryConsultaTelefono();
    return json_encode($result);
 }

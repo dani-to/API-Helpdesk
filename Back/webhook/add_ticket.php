@@ -10,6 +10,6 @@ $params=[
     "estatus" =>'1',
     "imagen" =>'imagen.png'
   ];
-$result=insertticket($params);
+$result=insertTicket($params);
 echo $result;
 ?>
