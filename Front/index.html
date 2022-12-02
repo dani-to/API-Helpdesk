@@ -37,7 +37,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">Página xd</span>
+        <span class="d-none d-lg-block">Help Desk</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div>
@@ -110,21 +110,14 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link ">
           <i class="bi bi-grid"></i>
-          <span>Solicitar Ayuda</span>
+          <span>Tickets</span>
         </a>
       </li>
 
 
       <li class="nav-heading">Otros</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
-          <i class="bi bi-person"></i>
-          <span>Perfil (?)</span>
-        </a>
-      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-faq.html">
@@ -155,12 +148,13 @@
           <div class="row">
 
             <!-- Formulario -->
+            
             <div class="col-xxl-12 col-xl-12">
               <div class="card info-card customers-card">
 
                 <div class="card-body">
                   <h5 class="card-title">Soporte <span>| Ticket de ayuda</span></h5>
-
+                <form id="fmr-employer">
                   <div class="row mb-3">
                       <label for="firstNombre" class="col-md-4 col-lg-3 col-form-label" >Nombre(s)</label>
                       <div class="col-md-8 col-lg-9">
@@ -200,7 +194,7 @@
                   <div class="row mb-3">
                     <label for="telephone" class="col-md-4 col-lg-3 col-form-label">Teléfono</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="telephone" type="number" class="form-control" id="telephone" disabled>
+                      <input name="telephone" type="text" class="form-control" id="telephone" disabled>
                     </div>
                 </div>
                   <div class="mb-3 row">
@@ -223,7 +217,7 @@
                     </div>
                   </div>
                   <span>Foto adjuntada...</span>
-                  <img src="https://th.bing.com/th/id/R.0781bcc4c8da585cc7889169c4e1c2c2?rik=t9clK%2bQ94rv9sQ&pid=ImgRaw&r=0" class="img-fluid" alt="...">
+                  <img src="https://catinfog.com/wp-content/uploads/2019/01/ticket-supreme-1.jpg" class="img-fluid" alt="...">
                   
                   <h5 class="card-title">Soporte <span>| Proceso del ticket</span></h5>
                   <div class="mb-3 row">
@@ -251,9 +245,10 @@
                   </div>
                   <button type="submit" class="btn btn-primary allign-right">Enviar solución</button>
                 </div>
+              </form>
               </div>
-
-            </div><!-- Fin del formulario -->
+            </div>
+            <!-- Fin del formulario -->
 
 
           </div>
@@ -329,7 +324,7 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>tienda no c cómo se llame</span></strong>. Derechos reservados
+      &copy; Copyright <strong><span>S D A W</span></strong>. Derechos reservados
     </div>
     <div class="credits">
       Desarrollo de Aplicaciones Web II</a>

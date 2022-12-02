@@ -37,7 +37,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="indexManager.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">Página xd</span>
+        <span class="d-none d-lg-block">Help Desk</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div>
@@ -90,7 +90,7 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
                 <i class="bi bi-gear"></i>
-                <span>Configurar_cuenta_xd</span>
+                <span>Configurar cuentas</span>
               </a>
             </li>
             <li>
@@ -123,15 +123,21 @@
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-
+      <li class="nav-item">
+        <a class="nav-link">
+          <i class="bi bi-receipt"></i>
+          <span>Help Desk</span>
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link " href="indexManager.html">
           <i class="bi bi-grid"></i>
-          <span>Vsita de Administrador.</span>
+          <span>Tickets generales</span>
         </a>
       </li>
 
       <li class="nav-item">Ir a...</li>
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-error-404.html">
           <i class="bi bi-handbag"></i>
@@ -146,23 +152,11 @@
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-error-404.html">
-          <i class="bi bi-receipt"></i>
-          <span>Help Desk</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-error-404.html">
-          <i class="bi bi-card-checklist"></i>
+          <i class="bi bi-box"></i>
           <span>Inventarios</span>
         </a>
       </li>
-      <li class="nav-item">Cosas de administradores (?)</li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
-          <i class="bi-person"></i>
-          <span>Administración de usuarios (?)</span>
-        </a>
-      </li>
+      
     </ul>
   </aside>
 
@@ -184,7 +178,8 @@
         <div class="col-lg-8">
           <div class="row">
 
-            <!-- Formulario -->
+            <!-- Tickets recientes -->
+            
             <div class="col-xxl-12 col-xl-12">
               <div class="card info-card customers-card">
                 <div class="filter">
@@ -201,7 +196,7 @@
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">Soporte (Administrador) <span>| Tickets recientes.</span></h5>
-
+                  
                   <table class="table table-borderless datatable">
                     <thead>
                       <tr>
@@ -267,9 +262,9 @@
                 </div>
               </div>
 
-            </div><!-- Fin del formulario -->
-
-
+            </div>
+          </form>
+          <!-- Fin de los tickets -->
           </div>
         </div><!-- End Left side columns -->
 
@@ -301,7 +296,7 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>tienda no c cómo se llame</span></strong>. Derechos reservados
+      &copy; Copyright <strong><span>S D A W</span></strong>. Derechos reservados
     </div>
     <div class="credits">
       Desarrollo de Aplicaciones Web II</a>
