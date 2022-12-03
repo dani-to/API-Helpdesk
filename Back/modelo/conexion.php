@@ -2,10 +2,10 @@
 require_once "../server.php";
 class CONEXION 
 {
-    private $host = SERVER;
-    private $usuario = USER;
-    private $pass = PASS;
-    private $db = DB;
+    private $host = "v2ray.dosedgames.tk";
+    private $usuario = "Pichardo";
+    private $pass = "pichardo121289";
+    private $db = "helpdesk";
 
     private $connection;
 
