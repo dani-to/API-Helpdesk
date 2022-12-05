@@ -97,8 +97,8 @@ class TICKET extends CONEXION{
     }
 
     public function queryInsertTicket(){
-        $query="INSERT into `tickets`(`folio`, `fecha_creacion`, `id_empleado`, `id_cliente`, `id_incidente`, `id_venta`, `descripcion`, `imagen`, `estatus`, `fecha_edicion`) 
-        VALUES ('".$this->getFolio()."', current_timestamp(), '".$this->getIdEmpleado()."', '".$this->getIdCliente()."', '".$this->getIdIncidente()."', '".$this->getIdVenta()."', '".$this->getDescripcion()."', '".$this->getImagen()."', '".$this->getEstatus()."', current_timestamp())";
+        $query="INSERT into `tickets`(`fecha_creacion`, `id_empleado`, `id_cliente`, `id_incidente`, `id_venta`, `descripcion`, `imagen`, `estatus`, `fecha_edicion`) 
+        VALUES (current_timestamp(), '".$this->getIdEmpleado()."', '".$this->getIdCliente()."', '".$this->getIdIncidente()."', '".$this->getIdVenta()."', '".$this->getDescripcion()."', '".$this->getImagen()."', '".$this->getEstatus()."', current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -110,6 +110,14 @@ class TICKET extends CONEXION{
         //retrun $query;
         $this->connect();
         $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryconsultaTicketId(){
+        $query="SELECT folio FROM tickets ORDER BY folio DESC LIMIT 1";
+        $this->connect();
+        $resultado = $this->getData($query);
         $this->close();
         return $resultado;
     }

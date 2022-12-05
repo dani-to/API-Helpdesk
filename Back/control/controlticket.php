@@ -10,7 +10,6 @@ function consultaTicket($folio){
 function insertTicket($params){
     include_once "../modelo/ticket.php";
     $TICKET = new TICKET();
-    $TICKET -> setFolio($params['folio']);
     $TICKET -> setIdEmpleado($params['id_empleado']);
     $TICKET -> setIdCliente($params['id_cliente']);
     $TICKET -> setIdIncidente($params['id_incidente']);
@@ -27,4 +26,11 @@ function updateTicket($params){
     $TICKET -> setFolio($params['folio']);
     $TICKET -> setEstatus($params['estatus']);
     return $TICKET->queryUpdateTicket();
+}
+
+function consultaTicketId(){
+    include_once "../modelo/ticket.php";
+    $TICKET = new TICKET();
+    $result = $TICKET->queryConsultaTicket();
+   return json_encode($result);
 }

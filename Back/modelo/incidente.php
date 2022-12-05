@@ -86,7 +86,7 @@ class INCIDENTE extends CONEXION{
     }
 
     public function queryconsultaIncidenteId(){
-        $query="SELECT id_incidentes FROM incidente ORDER BY id_incidente DESC LIMIT 1";
+        $query="SELECT id_incidente FROM incidentes ORDER BY id_incidente DESC LIMIT 1";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
