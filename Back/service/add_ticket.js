@@ -3,8 +3,9 @@ $(document).ready(function(){
     $("#fmr-costumer").on("submit", function(e){
         var combo = document.getElementById("tipo");
         var selected = combo.options[combo.selectedIndex].text;
+        console.log($("#about").val());
         if($("#nombre").val()!='' && $("#lastName1").val()!='' && $("#lastName2").val()!='' && $("#eMail").val()!='' 
-            && $("#telephone").val()!='' && $("#about").val()!='' && $("#imagen").val()!='' && selected!='Elige una opción'){
+            && $("#telephone").val()!='' && $("#about").val()!='' && selected!='Elige una opción' && $("#about").val()!='...'){
             var formData = new FormData(document.getElementById("fmr-costumer"));
             formData.append("nombre", $("#nombre").val());
             formData.append("apaterno", $("#lastName1").val());
@@ -114,6 +115,7 @@ $(document).ready(function(){
                                                                 formData.append("id_incidente", $("#id_incidente").val());
                                                                 formData.append("id_cliente", $("#id_cliente").val());
                                                                 formData.append("descripcion", $("#about").val());
+                                                                formData.append("producto", $("#producto").val());
                                                                 $.ajax({
                                                                     url: "../Back/webhook/add_ticket.php",
                                                                     type: "post",
@@ -179,6 +181,7 @@ $(document).ready(function(){
                                                         formData.append("id_incidente", $("#id_incidente").val());
                                                         formData.append("id_cliente", $("#id_cliente").val());
                                                         formData.append("descripcion", $("#about").val());
+                                                        formData.append("producto", $("#producto").val());
                                                         $.ajax({
                                                             url: "../Back/webhook/add_ticket.php",
                                                             type: "post",
@@ -268,6 +271,7 @@ $(document).ready(function(){
                                                         formData.append("id_incidente", $("#id_incidente").val());
                                                         formData.append("id_cliente", $("#id_cliente").val());
                                                         formData.append("descripcion", $("#about").val());
+                                                        formData.append("producto", $("#producto").val());
                                                         $.ajax({
                                                             url: "../Back/webhook/add_ticket.php",
                                                             type: "post",
@@ -333,6 +337,7 @@ $(document).ready(function(){
                                                     formData.append("id_incidente", $("#id_incidente").val());
                                                     formData.append("id_cliente", $("#id_cliente").val());
                                                     formData.append("descripcion", $("#about").val());
+                                                    formData.append("producto", $("#producto").val());
                                                     $.ajax({
                                                         url: "../Back/webhook/add_ticket.php",
                                                         type: "post",

@@ -6,6 +6,7 @@ class TICKET extends CONEXION{
     private $id_cliente;
     private $id_incidente;
     private $id_venta;
+    private $producto;
     private $descripcion;
     private $imagen;
     private $estatus;
@@ -61,6 +62,15 @@ class TICKET extends CONEXION{
         $this->id_venta = $id_venta;
     }
 
+    public function getProducto()
+    {
+        return $this->producto;
+    }
+    public function setProducto($producto): void
+    {
+        $this->producto = $producto;
+    }
+
     public function getDescripcion()
     {
         return $this->descripcion;
@@ -97,8 +107,8 @@ class TICKET extends CONEXION{
     }
 
     public function queryInsertTicket(){
-        $query="INSERT into `tickets`(`fecha_creacion`, `id_empleado`, `id_cliente`, `id_incidente`, `id_venta`, `descripcion`, `imagen`, `estatus`, `fecha_edicion`) 
-        VALUES (current_timestamp(), '".$this->getIdEmpleado()."', '".$this->getIdCliente()."', '".$this->getIdIncidente()."', '".$this->getIdVenta()."', '".$this->getDescripcion()."', '".$this->getImagen()."', '".$this->getEstatus()."', current_timestamp())";
+        $query="INSERT into `tickets`(`fecha_creacion`, `id_empleado`, `id_cliente`, `id_incidente`, `id_venta`, `nombre_producto`, `descripcion`, `imagen`, `estatus`, `fecha_edicion`) 
+        VALUES (current_timestamp(), '".$this->getIdEmpleado()."', '".$this->getIdCliente()."', '".$this->getIdIncidente()."', '".$this->getIdVenta()."', '".$this->getProducto()."', '".$this->getDescripcion()."', '".$this->getImagen()."', '".$this->getEstatus()."', current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

@@ -14,6 +14,7 @@ function insertTicket($params){
     $TICKET -> setIdCliente($params['id_cliente']);
     $TICKET -> setIdIncidente($params['id_incidente']);
     $TICKET -> setIdVenta($params['id_venta']);
+    $TICKET -> setProducto($params['producto']);
     $TICKET -> setDescripcion($params['descripcion']);
     $TICKET -> setEstatus($params['estatus']);
     $TICKET -> setImagen($params['imagen']);
