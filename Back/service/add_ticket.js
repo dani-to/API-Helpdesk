@@ -1,11 +1,7 @@
 $(document).ready(function(){
     var id_cliente;
     $("#fmr-costumer").on("submit", function(e){
-        var $ext=explode(".", $_FILES['imagen']['name']);
-        if($_FILES['imagen']['type']=="image/jpg"||$_FILES['imagen']['type']=="image/jpeg"||$_FILES['imagen']['type']=="image/png"){
-            var $ima=round(microtime(true)).'.'.end($ext);
-            move_uploaded_file($_FILES['imagen']['tmp_name'], '../files/img/'.$ima);
-        }
+        
 
         if($("#nombre").val()!='' && $("#lastName1").val()!='' && $("#lastName2").val()!='' && $("#eMail").val()!='' 
             && $("#telephone").val()!='' && $("#about").val()!='' && $("#imagen").val()!=''){
@@ -118,7 +114,6 @@ $(document).ready(function(){
                                                                 formData.append("id_incidente", $("#id_incidente").val());
                                                                 formData.append("id_cliente", $("#id_cliente").val());
                                                                 formData.append("descripcion", $("#about").val());
-                                                                formData.append("imagen", $imagen);
                                                                 $.ajax({
                                                                     url: "../Back/webhook/add_ticket.php",
                                                                     type: "post",
@@ -141,15 +136,15 @@ $(document).ready(function(){
                                                                         })
                                                                         .done(function(res){
                                                                             let TICKET = JSON.parse(res);
-                                                                            console.log(TICKET[0].folio);
+                                                                            alert(TICKET[0].folio);
                                                                         })
                                                                     }else{
-                                                                        console.log("No se guardo el ticket");
+                                                                        alert("No se guardo el ticket");
                                                                     }
                                                                 })
                                                             })
                                                         }else{
-                                                            console.log("No se guardo el incidente");
+                                                            alert("No se guardo el incidente");
                                                         }
                                                     })
                                             })
@@ -206,7 +201,7 @@ $(document).ready(function(){
                                                                 })
                                                                 .done(function(res){
                                                                     let TICKET = JSON.parse(res);
-                                                                    console.log(TICKET[0].folio);
+                                                                    alert(TICKET[0].folio);
                                                                 })
                                                             }
                                                         })
@@ -295,15 +290,15 @@ $(document).ready(function(){
                                                                 })
                                                                 .done(function(res){
                                                                     let TICKET = JSON.parse(res);
-                                                                    console.log(TICKET[0].folio);
+                                                                    alert(TICKET[0].folio);
                                                                 })
                                                             }else{
-                                                                console.log("No se guardo el ticket");
+                                                                alert("No se guardo el ticket");
                                                             }
                                                         })
                                                     })
                                                 }else{
-                                                    console.log("No se guardo el incidente");
+                                                    alert("No se guardo el incidente");
                                                 }
                                             })
                                         })
@@ -359,16 +354,17 @@ $(document).ready(function(){
                                                                 processData: false
                                                             })
                                                             .done(function(res){
+                                                                console.log(res);
                                                                 let TICKET = JSON.parse(res);
-                                                                console.log(TICKET[0].folio);
+                                                                alert(TICKET[0].folio);
                                                             })
                                                         }else{
-                                                            console.log("No se guardo el ticket");
+                                                            alert("No se guardo el ticket");
                                                         }
                                                     })
                                                 })
                                             }else{
-                                                console.log("No se guardo el incidente");
+                                                alert("No se guardo el incidente");
                                             }
                                         })
                                     }
@@ -377,12 +373,12 @@ $(document).ready(function(){
                         })
                     })
                 }else{
-                    console.log("No se guardo el cliente");
+                    alert("No se guardo el cliente");
                 }            
             });
         e.preventDefault();
     }else{
-        console.log("Favor de llenar los campos");
+        alert("Favor de llenar los campos");
     }
     });
 });

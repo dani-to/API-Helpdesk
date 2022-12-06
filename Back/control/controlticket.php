@@ -31,6 +31,6 @@ function updateTicket($params){
 function consultaTicketId(){
     include_once "../modelo/ticket.php";
     $TICKET = new TICKET();
-    $result = $TICKET->queryConsultaTicket();
+    $result = $TICKET->queryConsultaTicketId();
    return json_encode($result);
 }
