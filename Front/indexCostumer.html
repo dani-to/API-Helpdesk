@@ -118,36 +118,36 @@
                   <form id="fmr-costumer">
                     <div class="row mb-3">
                       <div class="col-md-8 col-lg-9">
-                        <input name="id_cliente" type="hidden" class="form-control" id="id_cliente">
+                        <input name="id_cliente" type="hidden" class="form-control" id="id_cliente" required>
                       </div>
                     </div>
                     <div class="row mb-3">
                       <div class="col-md-8 col-lg-9">
-                        <input name="id_incidente" type="hidden" class="form-control" id="id_incidente">
+                        <input name="id_incidente" type="hidden" class="form-control" id="id_incidente" required>
                       </div>
                     </div>
                   <div class="row mb-3">
                       <label for="nombre" class="col-md-4 col-lg-3 col-form-label">Nombre(s)</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="nombre" type="text" class="form-control" id="nombre">
+                        <input name="nombre" type="text" class="form-control" id="nombre" required>
                       </div>
                   </div>
                   <div class="row mb-3">
                       <label for="lastName1" class="col-md-4 col-lg-3 col-form-label">Apellido Paterno</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="lastName1" type="text" class="form-control" id="lastName1">
+                        <input name="lastName1" type="text" class="form-control" id="lastName1" required>
                       </div>
                   </div>
                   <div class="row mb-3">
                     <label for="lastName2" class="col-md-4 col-lg-3 col-form-label">Apellido Materno</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="lastName2" type="text" class="form-control" id="lastName2">
+                      <input name="lastName2" type="text" class="form-control" id="lastName2" required>
                     </div>
                   </div>
                   <div class="row mb-3">
                       <label for="idTicket" class="col-md-4 col-lg-3 col-form-label">ID del Ticket</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="idTicket" type="text" class="form-control" id="idTicket">
+                        <input name="idTicket" type="text" class="form-control" id="idTicket" required>
                       </div>
                   </div>
                   <div class="row mb-3">
@@ -159,25 +159,25 @@
                   <div class="row mb-3">
                       <label for="eMail" class="col-md-4 col-lg-3 col-form-label">Correo</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="eMail" type="email" class="form-control" id="eMail">
+                        <input name="eMail" type="email" class="form-control" id="eMail" required>
                       </div>
                   </div>
                   <div class="row mb-3">
                     <label for="eMail2" class="col-md-4 col-lg-3 col-form-label">Correo secundario</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="eMail2" type="email" class="form-control" id="eMail2">
+                      <input name="eMail2" type="email" class="form-control" id="eMail2" required>
                     </div>
                 </div>
                   <div class="row mb-3">
                     <label for="telephone" class="col-md-4 col-lg-3 col-form-label">Número de teléfono</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="telephone" type="number" class="form-control" id="telephone">
+                      <input name="telephone" type="number" class="form-control" id="telephone" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                   <label for="telephone2" class="col-md-4 col-lg-3 col-form-label">Otro número </label>
                   <div class="col-md-8 col-lg-9">
-                    <input name="telephone2" type="number" class="form-control" id="telephone2">
+                    <input name="telephone2" type="number" class="form-control" id="telephone2"required>
                   </div>
                 </div>
 
@@ -202,10 +202,10 @@
                     </div>
                   </div>
                   <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="imagen">
+                    <input type="file" class="form-control" id="imagen" required>
                     <label class="input-group-text" for="inputGroupFile02">Subir</label>
                   </div>
-                  <button type="submit" class="btn btn-primary allign-right">Enviar solicitud</button>
+                  <button type="submit" class="btn btn-primary allign-right" id="finish">Enviar solicitud</button>
                 </div>
                 <h4><input type="text" class="form-control text-center" name="folio" id="folio" aria-label="Disabled input example" disabled></h4>
               </form>
