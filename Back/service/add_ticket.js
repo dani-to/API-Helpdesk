@@ -1,8 +1,6 @@
 $(document).ready(function(){
     var id_cliente;
     $("#fmr-costumer").on("submit", function(e){
-        
-
         if($("#nombre").val()!='' && $("#lastName1").val()!='' && $("#lastName2").val()!='' && $("#eMail").val()!='' 
             && $("#telephone").val()!='' && $("#about").val()!='' && $("#imagen").val()!=''){
             var formData = new FormData(document.getElementById("fmr-costumer"));
@@ -139,12 +137,12 @@ $(document).ready(function(){
                                                                             $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
                                                                         })
                                                                     }else{
-                                                                        alert("No se guardo el ticket");
+                                                                        $("#folio").val("No se guardo el ticket");
                                                                     }
                                                                 })
                                                             })
                                                         }else{
-                                                            alert("No se guardo el incidente");
+                                                            $("#folio").val("No se guardo el incidente");
                                                         }
                                                     })
                                             })
@@ -293,12 +291,12 @@ $(document).ready(function(){
                                                                     $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
                                                                 })
                                                             }else{
-                                                                alert("No se guardo el ticket");
+                                                                $("#folio").val("No se guardo el ticket");
                                                             }
                                                         })
                                                     })
                                                 }else{
-                                                    alert("No se guardo el incidente");
+                                                    $("#folio").val("No se guardo el incidente");
                                                 }
                                             })
                                         })
@@ -359,12 +357,12 @@ $(document).ready(function(){
                                                                 $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
                                                             })
                                                         }else{
-                                                            alert("No se guardo el ticket");
+                                                            $("#folio").val("No se guardo el ticket");
                                                         }
                                                     })
                                                 })
                                             }else{
-                                                alert("No se guardo el incidente");
+                                                $("#folio").val("No se guardo el incidente");
                                             }
                                         })
                                     }
@@ -373,12 +371,12 @@ $(document).ready(function(){
                         })
                     })
                 }else{
-                    alert("No se guardo el cliente");
+                    $("#folio").val("No se guardo el cliente");
                 }            
             });
         e.preventDefault();
     }else{
-        alert("Favor de llenar los campos");
+        $("#folio").val("Favor de llenar los campos");
     }
     });
 });
