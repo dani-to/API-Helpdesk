@@ -7,7 +7,7 @@ $params=[
     "id_venta" =>'1',
     "descripcion" =>$_POST['descripcion'],
     "estatus" =>'0',
-    "imagen" =>'imagen.png'
+    "imagen" =>$_POST['imagen']
   ];
 $result=insertTicket($params);
 echo $result;

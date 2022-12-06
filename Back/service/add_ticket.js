@@ -1,6 +1,14 @@
 $(document).ready(function(){
     var id_cliente;
     $("#fmr-costumer").on("submit", function(e){
+        var $ext=explode(".", $_FILES['imagen']['name']);
+        if($_FILES['imagen']['type']=="image/jpg"||$_FILES['imagen']['type']=="image/jpeg"||$_FILES['imagen']['type']=="image/png"){
+            var $ima=round(microtime(true)).'.'.end($ext);
+            move_uploaded_file($_FILES['imagen']['tmp_name'], '../files/img/'.$ima);
+        }
+
+        if($("#nombre").val()!='' && $("#lastName1").val()!='' && $("#lastName2").val()!='' && $("#eMail").val()!='' 
+            && $("#telephone").val()!='' && $("#about").val()!='' && $("#imagen").val()!=''){
             var formData = new FormData(document.getElementById("fmr-costumer"));
             formData.append("nombre", $("#nombre").val());
             formData.append("apaterno", $("#lastName1").val());
@@ -110,6 +118,7 @@ $(document).ready(function(){
                                                                 formData.append("id_incidente", $("#id_incidente").val());
                                                                 formData.append("id_cliente", $("#id_cliente").val());
                                                                 formData.append("descripcion", $("#about").val());
+                                                                formData.append("imagen", $imagen);
                                                                 $.ajax({
                                                                     url: "../Back/webhook/add_ticket.php",
                                                                     type: "post",
@@ -372,5 +381,8 @@ $(document).ready(function(){
                 }            
             });
         e.preventDefault();
+    }else{
+        console.log("Favor de llenar los campos");
+    }
     });
 });
