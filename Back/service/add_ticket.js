@@ -136,7 +136,7 @@ $(document).ready(function(){
                                                                         })
                                                                         .done(function(res){
                                                                             let TICKET = JSON.parse(res);
-                                                                            alert(TICKET[0].folio);
+                                                                            $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
                                                                         })
                                                                     }else{
                                                                         alert("No se guardo el ticket");
@@ -201,7 +201,7 @@ $(document).ready(function(){
                                                                 })
                                                                 .done(function(res){
                                                                     let TICKET = JSON.parse(res);
-                                                                    alert(TICKET[0].folio);
+                                                                    $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
                                                                 })
                                                             }
                                                         })
@@ -290,7 +290,7 @@ $(document).ready(function(){
                                                                 })
                                                                 .done(function(res){
                                                                     let TICKET = JSON.parse(res);
-                                                                    alert(TICKET[0].folio);
+                                                                    $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
                                                                 })
                                                             }else{
                                                                 alert("No se guardo el ticket");
@@ -356,7 +356,7 @@ $(document).ready(function(){
                                                             .done(function(res){
                                                                 console.log(res);
                                                                 let TICKET = JSON.parse(res);
-                                                                alert(TICKET[0].folio);
+                                                                $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
                                                             })
                                                         }else{
                                                             alert("No se guardo el ticket");
