@@ -1,8 +1,10 @@
 $(document).ready(function(){
     var id_cliente;
     $("#fmr-costumer").on("submit", function(e){
+        var combo = document.getElementById("tipo");
+        var selected = combo.options[combo.selectedIndex].text;
         if($("#nombre").val()!='' && $("#lastName1").val()!='' && $("#lastName2").val()!='' && $("#eMail").val()!='' 
-            && $("#telephone").val()!='' && $("#about").val()!='' && $("#imagen").val()!=''){
+            && $("#telephone").val()!='' && $("#about").val()!='' && $("#imagen").val()!='' && selected!='Elige una opción'){
             var formData = new FormData(document.getElementById("fmr-costumer"));
             formData.append("nombre", $("#nombre").val());
             formData.append("apaterno", $("#lastName1").val());
