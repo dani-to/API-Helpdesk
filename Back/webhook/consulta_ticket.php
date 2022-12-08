@@ -1,5 +1,4 @@
 <?php 
 include_once"../control/controlticket.php";
-$folio = '1';
-$result=consultaTicket($folio);
+$result=consultaTicket();
 echo $result;

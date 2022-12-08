@@ -1,8 +1,7 @@
 <?php
-function consultaTicket($folio){
+function consultaTicket(){
     include_once "../modelo/ticket.php";
     $TICKET = new TICKET();
-    $TICKET -> setFolio($folio);
     $result = $TICKET->queryConsultaTicket();
    return json_encode($result);
 }

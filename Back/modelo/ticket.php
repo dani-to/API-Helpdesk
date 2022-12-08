@@ -100,7 +100,7 @@ class TICKET extends CONEXION{
 
     public function queryconsultaTicket(){
         //Modificado
-        $query="SELECT tk.folio, tk.fecha_creacion, tk.id_empleado, tk.id_cliente, tk.id_incidente, tk.id_venta, tk.descripcion, tk.imagen, tk.estatus, tk.fecha_edicion, tk.fecha_solucion, ic.id_incidente, ic.nivel_prioridad FROM tickets tk, incidentes ic WHERE tk.id_incidente = ic.id_incidente";
+        $query="SELECT tk.folio, tk.fecha_creacion, tk.id_empleado, tk.id_cliente, tk.id_incidente, tk.id_venta, tk.descripcion, tk.imagen, tk.estatus, tk.fecha_edicion, tk.fecha_solucion, ic.id_incidente, ic.nivel_prioridad, ic.tipo_problema FROM tickets tk, incidentes ic WHERE tk.id_incidente = ic.id_incidente";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

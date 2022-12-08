@@ -56,13 +56,14 @@ class CLIENTE extends CONEXION{
         return $resultado;
     }
 
-    public function queryInsertCliente(){
-        $query="INSERT into `clientes`(`nombre`, `a_paterno`, `a_materno`) 
+    public function queryInsertCliente(){       // funcion insertar
+        $query="INSERT into `clientes`(`nombre`, `a_paterno`, `a_materno`)  
         VALUES ('".$this->getNombre()."', '".$this->getApaterno()."', '".$this->getAmaterno()."')";
-        $this->connect();
-        $resultado= $this->executeInstruction($query);
-        $this->close();
-        return $resultado;
+            //estas 2 lineas anteriores son la query a ejecutar, la primera parte es lo que esta en base de datos y la segunda es lo que enviamos, pero para eso en el anterior lo enviamos a set (recibe) y aqui lo mandamos con get (envia a base de datos)
+        $this->connect();  //conexion a base de datos
+        $resultado= $this->executeInstruction($query);  //ejecuta query y recibe resultado
+        $this->close();                                 //cierra conexion a base de datos 
+        return $resultado;                              //regresa respuesta a control
     }
 
     public function queryconsultaClienteId(){

@@ -42,8 +42,22 @@
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div>
 
+    <!-- La barra de  búsqueda está aquí -->
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Búsqueda" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div>
+
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li>
 
       <!-- La configuración de usuario está aquí xd -->
       <!-- Esta es la foto de perfil si es que lleva (Referenciada) -->
@@ -51,13 +65,13 @@
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/pp.png" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Nombre1</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2">Nombre_main xd</span>
           </a>
         <!-- Aquí va la info del dropdown-->
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Nombre</h6>
-              <span>Empleado</span>
+              <h6>Nombre_submain_xd</h6>
+              <span>más_infoxd</span>
             </li>
         <!-- Aquí vans las configs y otras cosas del perfil-->    
             <li>
@@ -71,7 +85,7 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
                 <i class="bi bi-question-circle"></i>
-                <span>Ayuda</span>
+                <span>Ayudaaaaa</span>
               </a>
             </li>
             <li>
@@ -117,11 +131,11 @@
 
   <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Tickets</h1>
+      <h1>Solicitar Ticket</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-          <li class="breadcrumb-item active">Ticket actual</li>
+          <li class="breadcrumb-item active">Ticket</li>
         </ol>
       </nav>
     </div>
@@ -220,13 +234,13 @@
                   <div class="row mb-3">
                     <label for="solProcess" class="col-md-4 col-lg-3 col-form-label">Proceso de solución</label>
                     <div class="col-md-8 col-lg-9">
-                      <textarea name="solProcess" class="form-control" id="solProcess" style="height: 100px" required>...</textarea>
+                      <textarea name="solProcess" class="form-control" id="solProcess" style="height: 100px">...</textarea>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="processSol" class="col-md-4 col-lg-3 col-form-label">Solución brindada</label>
                     <div class="col-md-8 col-lg-9">
-                      <textarea name="processSol" class="form-control" id="processSol" style="height: 100px" required>...</textarea>
+                      <textarea name="processSol" class="form-control" id="processSol" style="height: 100px">...</textarea>
                     </div>
                   </div>
                   <button type="submit" class="btn btn-primary allign-right">Enviar solución</button>
@@ -266,34 +280,10 @@
                     <th scope="col">#ID</th>
                     <th scope="col">Asunto</th>
                     <th scope="col">Status</th>
+                    <th scope="col">Prioridad</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row"><a href="#">#2457</a></th>
-                    <td><a href="#" class="text-primary">Asunto de ejemplo</a></td>
-                    <td><span class="badge bg-warning">Pendiente</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><a href="#">#2049</a></th>
-                    <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                    <td><span class="badge bg-success">Solucionado</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><a href="#">#2049</a></th>
-                    <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                    <td><span class="badge bg-success">Solucionado</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><a href="#">#2147</a></th>
-                    <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                    <td><span class="badge bg-warning">Pendiente</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><a href="#">#2147</a></th>
-                    <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                    <td><span class="badge bg-warning">Pendiente</span></td>
-                  </tr>
+                <tbody id="tbody_ticket">
                 </tbody>
               </table>
 
@@ -331,6 +321,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../back/service/consulta_ticket_admi.js"></script>
 
 </body>
 
