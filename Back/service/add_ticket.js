@@ -139,6 +139,19 @@ $(document).ready(function(){
                                                                         .done(function(res){
                                                                             let TICKET = JSON.parse(res);
                                                                             $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
+                                                                            formData.append("folio", TICKET[0].folio);
+                                                                            $.ajax({
+                                                                                url: "../Back/webhook/correo_cliente.php",
+                                                                                type: "post",
+                                                                                dataType: "html",
+                                                                                data: formData,
+                                                                                cache: false,
+                                                                                contentType: false,
+                                                                                processData: false
+                                                                            })
+                                                                            .done(function(res){
+                                                                                console.log(res);
+                                                                            })
                                                                         })
                                                                     }else{
                                                                         $("#folio").val("No se guardo el ticket");
@@ -205,6 +218,19 @@ $(document).ready(function(){
                                                                 .done(function(res){
                                                                     let TICKET = JSON.parse(res);
                                                                     $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
+                                                                    formData.append("folio", TICKET[0].folio);
+                                                                    $.ajax({
+                                                                        url: "../Back/webhook/correo_cliente.php",
+                                                                        type: "post",
+                                                                        dataType: "html",
+                                                                        data: formData,
+                                                                        cache: false,
+                                                                        contentType: false,
+                                                                        processData: false
+                                                                    })
+                                                                    .done(function(res){
+                                                                        console.log(res);
+                                                                    })
                                                                 })
                                                             }
                                                         })
@@ -295,6 +321,19 @@ $(document).ready(function(){
                                                                 .done(function(res){
                                                                     let TICKET = JSON.parse(res);
                                                                     $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
+                                                                    formData.append("folio", TICKET[0].folio);
+                                                                    $.ajax({
+                                                                        url: "../Back/webhook/correo_cliente.php",
+                                                                        type: "post",
+                                                                        dataType: "html",
+                                                                        data: formData,
+                                                                        cache: false,
+                                                                        contentType: false,
+                                                                        processData: false
+                                                                    })
+                                                                    .done(function(res){
+                                                                        console.log(res);
+                                                                    })
                                                                 })
                                                             }else{
                                                                 $("#folio").val("No se guardo el ticket");
@@ -362,6 +401,19 @@ $(document).ready(function(){
                                                                 console.log(res);
                                                                 let TICKET = JSON.parse(res);
                                                                 $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
+                                                                formData.append("folio", TICKET[0].folio);
+                                                                $.ajax({
+                                                                    url: "../Back/webhook/correo_cliente.php",
+                                                                    type: "post",
+                                                                    dataType: "html",
+                                                                    data: formData,
+                                                                    cache: false,
+                                                                    contentType: false,
+                                                                    processData: false
+                                                                })
+                                                                .done(function(res){
+                                                                    console.log(res);
+                                                                })
                                                             })
                                                         }else{
                                                             $("#folio").val("No se guardo el ticket");
