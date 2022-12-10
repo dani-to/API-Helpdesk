@@ -40,12 +40,12 @@
 		}
 
 		function obtenerTicketEstatus($estatus){
-			if($estatus=="PENDIENTE"){
-				$estatus=0;
-			}else if($estatus=="SOLUCIONADO"){
-				$estatus=1;
-			}else{
-				$estatus=$estatus;
+			switch($estatus){
+				case 'PENDIENTE': $estatus=0; break;
+				case 'SOLUCIONADO': $estatus=1; break;
+				case '1': $estatus=1; break;
+				case '0': $estatus=0; break;
+				default: 
 			}
 			$query = "SELECT t.folio, t.id_empleado, c.nombre, t.fecha_creacion, t.fecha_solucion, t.estatus FROM tickets t, clientes c where c.id_clientes = t.id_cliente and t.estatus=".$estatus;
 

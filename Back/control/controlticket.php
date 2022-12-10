@@ -24,6 +24,7 @@ function updateTicket($params){
     include_once "../modelo/ticket.php";
     $TICKET = new TICKET();
     $TICKET -> setFolio($params['folio']);
+    $TICKET -> setIdEmpleado($params['id_empleado']);
     $TICKET -> setEstatus($params['estatus']);
     return $TICKET->queryUpdateTicket();
 }
@@ -33,4 +34,18 @@ function consultaTicketId(){
     $TICKET = new TICKET();
     $result = $TICKET->queryConsultaTicketId();
    return json_encode($result);
+}
+
+function consultaTicketDatos($folio){
+    include_once "../modelo/ticket.php";
+    $TICKET = new TICKET();
+    $TICKET -> setFolio($folio);
+    $result = $TICKET->queryConsultaTicketDatos();
+   return json_encode($result);
+}
+
+function consultaTicketCorreo($params){
+    include_once "../send.php";
+    $res= enviaCorreo($params['folio'],$params['nombre'],$params['correo']);
+   return json_encode($res);
 }

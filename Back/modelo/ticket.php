@@ -117,7 +117,7 @@ class TICKET extends CONEXION{
     }
 
     public function queryUpdateTicket(){
-        $query="UPDATE `tickets` SET `id_empleado` = '".$this->getIdEmpleado()."', `fecha_edicion` = current_timestamp(), `fecha_solucion` = current_timestamp(), `estatus` ='".$this->getEstatus()."' WHERE `tickets`.`id_asignatura` = '".$this->getIdAsignatura()."'";
+        $query="UPDATE `tickets` SET `id_empleado` = '".$this->getIdEmpleado()."', `fecha_edicion` = current_timestamp(), `fecha_solucion` = current_timestamp(), `estatus` ='".$this->getEstatus()."' WHERE `tickets`.`folio` = '".$this->getFolio()."'";
         //retrun $query;
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -127,6 +127,14 @@ class TICKET extends CONEXION{
 
     public function queryconsultaTicketId(){
         $query="SELECT folio FROM tickets ORDER BY folio DESC LIMIT 1";
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryconsultaTicketDatos(){
+        $query="SELECT c.nombre, c.a_paterno, c.a_materno, tk.id_venta, tk.nombre_producto, co.correo, t.tel, ic.tipo_problema, tk.descripcion, tk.imagen, tk.id_incidente FROM tickets tk, incidentes ic, clientes c, correos co, telefonos t WHERE tk.id_incidente = ic.id_incidente and tk.id_cliente=c.id_clientes and c.id_clientes=co.id_cliente and co.id_cliente=t.id_cliente and tk.folio='".$this->getFolio()."' LIMIT 1";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

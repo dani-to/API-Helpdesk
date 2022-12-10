@@ -3,7 +3,6 @@ $(document).ready(function(){
     $("#fmr-costumer").on("submit", function(e){
         var combo = document.getElementById("tipo");
         var selected = combo.options[combo.selectedIndex].text;
-        console.log($("#about").val());
         if($("#nombre").val()!='' && $("#lastName1").val()!='' && $("#lastName2").val()!='' && $("#eMail").val()!='' 
             && $("#telephone").val()!='' && $("#about").val()!='' && selected!='Elige una opción' && $("#about").val()!='...'){
             var formData = new FormData(document.getElementById("fmr-costumer"));
@@ -110,7 +109,10 @@ $(document).ready(function(){
                                                                 processData: false
                                                             })
                                                             .done(function (res){
-                                                                let INCIDENTE = JSON.parse(res);                                                                console.log(INCIDENTE[0].id_incidente);
+                                                                let INCIDENTE = JSON.parse(res);
+                                                                var files = $('#imagen')[0].files[0];
+                                                                formData.append('imagen',files);
+                                                                console.log(INCIDENTE[0].id_incidente);
                                                                 $("#id_incidente").val(INCIDENTE[0].id_incidente);
                                                                 formData.append("id_incidente", $("#id_incidente").val());
                                                                 formData.append("id_cliente", $("#id_cliente").val());
@@ -119,7 +121,6 @@ $(document).ready(function(){
                                                                 $.ajax({
                                                                     url: "../Back/webhook/add_ticket.php",
                                                                     type: "post",
-                                                                    dataType: "html",
                                                                     data: formData,
                                                                     cache: false,
                                                                     contentType: false,
@@ -140,6 +141,7 @@ $(document).ready(function(){
                                                                             let TICKET = JSON.parse(res);
                                                                             $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
                                                                             formData.append("folio", TICKET[0].folio);
+                                                                            formData.append("correo", $("#eMail").val());
                                                                             $.ajax({
                                                                                 url: "../Back/webhook/correo_cliente.php",
                                                                                 type: "post",
@@ -219,6 +221,7 @@ $(document).ready(function(){
                                                                     let TICKET = JSON.parse(res);
                                                                     $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
                                                                     formData.append("folio", TICKET[0].folio);
+                                                                    formData.append("correo", $("#eMail").val());
                                                                     $.ajax({
                                                                         url: "../Back/webhook/correo_cliente.php",
                                                                         type: "post",
@@ -322,6 +325,7 @@ $(document).ready(function(){
                                                                     let TICKET = JSON.parse(res);
                                                                     $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
                                                                     formData.append("folio", TICKET[0].folio);
+                                                                    formData.append("correo", $("#eMail").val());
                                                                     $.ajax({
                                                                         url: "../Back/webhook/correo_cliente.php",
                                                                         type: "post",
@@ -402,6 +406,7 @@ $(document).ready(function(){
                                                                 let TICKET = JSON.parse(res);
                                                                 $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
                                                                 formData.append("folio", TICKET[0].folio);
+                                                                formData.append("correo", $("#eMail").val());
                                                                 $.ajax({
                                                                     url: "../Back/webhook/correo_cliente.php",
                                                                     type: "post",

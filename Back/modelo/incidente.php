@@ -76,9 +76,7 @@ class INCIDENTE extends CONEXION{
     }
 
     public function queryUpdateIncidente(){
-        $query="UPDATE `incidentes` SET `nivel_prioridad` = '".$this->getNivelPrioridad()."',
-         `tipo_problema` = '".$this->getTipoProblema()."', `proceso_solucion` = '".$this->getProcesoSolucion()."', 
-         `solucion` = '".$this->getSolucion()."' WHERE `incidentes`.`id_incidente` = '".$this->getIdIncidente()."'";
+        $query="UPDATE `incidentes` SET `nivel_prioridad` = '".$this->getNivelPrioridad()."', `proceso_solucion` = '".$this->getProcesoSolucion()."', `solucion` = '".$this->getSolucion()."' WHERE `incidentes`.`id_incidente` = '".$this->getIdIncidente()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
