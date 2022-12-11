@@ -40,7 +40,9 @@
 		}
 
 		function obtenerTicketEstatus($estatus){
+			$estatus = strtoupper($estatus);
 			switch($estatus){
+
 				case 'PENDIENTE': $estatus=0; break;
 				case 'SOLUCIONADO': $estatus=1; break;
 				case '1': $estatus=1; break;

@@ -17,17 +17,7 @@ $(document).ready(function(){
         do{
             if(TICKET[i].id==$("#idTicket").val()){
                 seguir=1;
-                $.ajax({
-                    url: "https://sdaw-production.up.railway.app/sales/all",
-                    type: "post",
-                    dataType: "html",
-                    cache: false,
-                    contentType: false,
-                    processData: false
-                })
-                .done(function(res){
-                    console.log(res);
-                });
+                
             }else{
                 seguir=0; i++;
             }
