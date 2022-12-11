@@ -15,7 +15,7 @@ $(document).ready(function(){
         let TICKET =JSON.parse(res);
         a= count(res);
         do{
-            if(TICKET[i]==$("#idTicket").val()){
+            if(TICKET[i].id==$("#idTicket").val()){
                 seguir=1;
                 $.ajax({
                     url: "https://sdaw-production.up.railway.app/sales/all",
