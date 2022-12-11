@@ -108,8 +108,8 @@ class TICKET extends CONEXION{
     }
 
     public function queryInsertTicket(){
-        $query="INSERT into `tickets`(`fecha_creacion`, `id_empleado`, `id_cliente`, `id_incidente`, `id_venta`, `nombre_producto`, `descripcion`, `imagen`, `estatus`, `fecha_edicion`) 
-        VALUES (current_timestamp(), '".$this->getIdEmpleado()."', '".$this->getIdCliente()."', '".$this->getIdIncidente()."', '".$this->getIdVenta()."', '".$this->getProducto()."', '".$this->getDescripcion()."', '".$this->getImagen()."', '".$this->getEstatus()."', current_timestamp())";
+        $query="INSERT into `tickets`(`fecha_creacion`, `id_cliente`, `id_incidente`, `id_venta`, `nombre_producto`, `descripcion`, `imagen`, `estatus`, `fecha_edicion`) 
+        VALUES (current_timestamp(), '".$this->getIdCliente()."', '".$this->getIdIncidente()."', '".$this->getIdVenta()."', '".$this->getProducto()."', '".$this->getDescripcion()."', '".$this->getImagen()."', '".$this->getEstatus()."', current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

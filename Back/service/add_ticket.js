@@ -1,32 +1,10 @@
 $(document).ready(function(){
     var id_cliente;
-    var seguir=0;
     var i=0;
-    $.ajax({
-        url: "https://sdaw-production.up.railway.app/sales/all",
-        type: "post",
-        dataType: "html",
-        cache: false,
-        contentType: false,
-        processData: false
-    })
-    .done(function(res){
-        console.log(res);
-        let TICKET =JSON.parse(res);
-        a= count(res);
-        do{
-            if(TICKET[i].id==$("#idTicket").val()){
-                seguir=1;
-                
-            }else{
-                seguir=0; i++;
-            }
-        }while(seguir==0 && a<i);
-    });
     $("#fmr-costumer").on("submit", function(e){
         var combo = document.getElementById("tipo");
         var selected = combo.options[combo.selectedIndex].text;
-        if(seguir==1 && $("#nombre").val()!='' && $("#lastName1").val()!='' && $("#lastName2").val()!='' && $("#eMail").val()!='' 
+        if($("#nombre").val()!='' && $("#lastName1").val()!='' && $("#lastName2").val()!='' && $("#eMail").val()!='' 
             && $("#telephone").val()!='' && $("#about").val()!='' && selected!='Elige una opción' && $("#about").val()!='...'){
             var formData = new FormData(document.getElementById("fmr-costumer"));
             formData.append("nombre", $("#nombre").val());
@@ -262,6 +240,8 @@ $(document).ready(function(){
                                                                         console.log(res);
                                                                     })
                                                                 })
+                                                            }else{
+                                                                $("#folio").val("No se guardo el ticket");
                                                             }
                                                         })
                                                     })
@@ -413,7 +393,7 @@ $(document).ready(function(){
                                                     formData.append("descripcion", $("#about").val());
                                                     formData.append("producto", $("#producto").val());
                                                     var files = $('#imagen')[0].files[0];
-                                                                formData.append('imagen',files);
+                                                    formData.append('imagen',files);
                                                     $.ajax({
                                                         url: "../Back/webhook/add_ticket.php",
                                                         type: "post",

@@ -16,18 +16,12 @@ if($uploadOk == 0){
    echo 0;
 }else{
    /* Upload file */
-   if(move_uploaded_file($_FILES['imagen']['tmp_name'],$location)){
-      echo $location;
-   }else{
-      echo 0;
-   }
 }
 
 /*if(isset($_FILES['imagen']['name'])){
     $archivo="false";
 }*/
 $params=[
-    "id_empleado" =>'1',
     "id_cliente" =>$_POST['id_cliente'],
     "id_incidente" =>$_POST['id_incidente'],
     "id_venta" =>$_POST['idventa'],

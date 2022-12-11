@@ -9,7 +9,6 @@ function consultaTicket(){
 function insertTicket($params){
     include_once "../modelo/ticket.php";
     $TICKET = new TICKET();
-    $TICKET -> setIdEmpleado($params['id_empleado']);
     $TICKET -> setIdCliente($params['id_cliente']);
     $TICKET -> setIdIncidente($params['id_incidente']);
     $TICKET -> setIdVenta($params['id_venta']);
