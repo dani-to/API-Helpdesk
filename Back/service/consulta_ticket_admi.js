@@ -2,6 +2,7 @@ $(document).ready(function(){
     let prioridad;
     cargaticket();
     solucion();
+    $("#id_empleado").val(1);
 });
 
 
@@ -71,7 +72,7 @@ function cargadatos(folio){
         $("#about").val(DATOS.descripcion);
         $("#tipo").val(DATOS.tipo_problema);
         $("#id_incidente").val(DATOS.id_incidente);
-        $("#imagen").val(DATOS.imagen);
+        $("#imagen").attr("src","../Back/files/img/"+DATOS.imagen);
     });
 }
 
