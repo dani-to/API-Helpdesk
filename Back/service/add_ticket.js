@@ -1,9 +1,42 @@
 $(document).ready(function(){
     var id_cliente;
+    var seguir=0;
+    var i=0;
+    $.ajax({
+        url: "https://sdaw-production.up.railway.app/sales/all",
+        type: "post",
+        dataType: "html",
+        cache: false,
+        contentType: false,
+        processData: false
+    })
+    .done(function(res){
+        console.log(res);
+        let TICKET =JSON.parse(res);
+        a= count(res);
+        do{
+            if(TICKET[i]==$("#idTicket").val()){
+                seguir=1;
+                $.ajax({
+                    url: "https://sdaw-production.up.railway.app/sales/all",
+                    type: "post",
+                    dataType: "html",
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                })
+                .done(function(res){
+                    console.log(res);
+                });
+            }else{
+                seguir=0; i++;
+            }
+        }while(seguir==0 && a<i);
+    });
     $("#fmr-costumer").on("submit", function(e){
         var combo = document.getElementById("tipo");
         var selected = combo.options[combo.selectedIndex].text;
-        if($("#nombre").val()!='' && $("#lastName1").val()!='' && $("#lastName2").val()!='' && $("#eMail").val()!='' 
+        if(seguir==1 && $("#nombre").val()!='' && $("#lastName1").val()!='' && $("#lastName2").val()!='' && $("#eMail").val()!='' 
             && $("#telephone").val()!='' && $("#about").val()!='' && selected!='Elige una opción' && $("#about").val()!='...'){
             var formData = new FormData(document.getElementById("fmr-costumer"));
             formData.append("nombre", $("#nombre").val());
@@ -114,6 +147,7 @@ $(document).ready(function(){
                                                                 formData.append('imagen',files);
                                                                 console.log(INCIDENTE[0].id_incidente);
                                                                 $("#id_incidente").val(INCIDENTE[0].id_incidente);
+                                                                formData.append("idventa", $("#idTicket").val());
                                                                 formData.append("id_incidente", $("#id_incidente").val());
                                                                 formData.append("id_cliente", $("#id_cliente").val());
                                                                 formData.append("descripcion", $("#about").val());
@@ -191,8 +225,11 @@ $(document).ready(function(){
                                                         processData: false
                                                     })
                                                     .done(function (res){
-                                                        let INCIDENTE = JSON.parse(res);                                                                console.log(INCIDENTE[0].id_incidente);
+                                                        let INCIDENTE = JSON.parse(res);
+                                                        var files = $('#imagen')[0].files[0];
+                                                                formData.append('imagen',files);                                                              console.log(INCIDENTE[0].id_incidente);
                                                         $("#id_incidente").val(INCIDENTE[0].id_incidente);
+                                                        formData.append("idventa", $("#idTicket").val());
                                                         formData.append("id_incidente", $("#id_incidente").val());
                                                         formData.append("id_cliente", $("#id_cliente").val());
                                                         formData.append("descripcion", $("#about").val());
@@ -297,6 +334,9 @@ $(document).ready(function(){
                                                     .done(function (res){
                                                         let INCIDENTE = JSON.parse(res);                                                                console.log(INCIDENTE[0].id_incidente);
                                                         $("#id_incidente").val(INCIDENTE[0].id_incidente);
+                                                        var files = $('#imagen')[0].files[0];
+                                                                formData.append('imagen',files);
+                                                        formData.append("idventa", $("#idTicket").val());
                                                         formData.append("id_incidente", $("#id_incidente").val());
                                                         formData.append("id_cliente", $("#id_cliente").val());
                                                         formData.append("descripcion", $("#about").val());
@@ -377,10 +417,13 @@ $(document).ready(function(){
                                                 .done(function (res){
                                                     let INCIDENTE = JSON.parse(res);                                                                console.log(INCIDENTE[0].id_incidente);
                                                     $("#id_incidente").val(INCIDENTE[0].id_incidente);
+                                                    formData.append("idventa", $("#idTicket").val());
                                                     formData.append("id_incidente", $("#id_incidente").val());
                                                     formData.append("id_cliente", $("#id_cliente").val());
                                                     formData.append("descripcion", $("#about").val());
                                                     formData.append("producto", $("#producto").val());
+                                                    var files = $('#imagen')[0].files[0];
+                                                                formData.append('imagen',files);
                                                     $.ajax({
                                                         url: "../Back/webhook/add_ticket.php",
                                                         type: "post",
