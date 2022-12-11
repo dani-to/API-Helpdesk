@@ -67,21 +67,21 @@
                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
                   <div class="card-body p-4 p-lg-5 text-black" >
     
-                    <form id="login">
+                    <form id="login" >
                       <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">¡Bienvenido! inicia sesión, por favor</h5>
     
                       <div class="form-outline mb-4">
-                        <input type="email" id="form2Example17" class="form-control form-control-lg" />
-                        <label class="form-label" for="form2Example17">Correo electrónico</label>
+                        <input type="email" id="correo" class="form-control form-control-lg" />
+                        <label class="form-label" for="correo">Correo electrónico</label>
                       </div>
     
                       <div class="form-outline mb-4">
-                        <input type="password" id="form2Example27" class="form-control form-control-lg" />
-                        <label class="form-label" for="form2Example27">Contraseña</label>
+                        <input type="password" id="pass" class="form-control form-control-lg" />
+                        <label class="form-label" for="pass">Contraseña</label>
                       </div>
     
                       <div class="pt-1 mb-4">
-                        <button class="btn btn-primary btn-lg btn-block" style="background-color: #16112D;" type="button" >Iniciar sesión</button>
+                        <button class="btn btn-primary btn-lg btn-block" style="background-color: #16112D;" id="submit" type="submit" >Iniciar sesión</button>
                       </div>
 
                     </form>
@@ -118,6 +118,9 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../Back/service/add_ticket.js"></script>
 
 </body>
 
