@@ -1,5 +1,9 @@
 <?php 
 include_once"../control/controlticket.php";
-$folio = $_POST['folio'];
-$result=consultaTicketCorreo($folio);
+$params=[
+	"folio"=> $_POST['folio'],
+	"correo"=> $_POST['correo'],
+	"nombre"=>$_POST['nombre']
+];
+$result=consultaTicketCorreo($params);
 echo $result;

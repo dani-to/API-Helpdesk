@@ -155,6 +155,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Soporte <span>| Ticket de ayuda</span></h5>
                 <form id="fmr-employer">
+                  <input name="folio" type="hidden" class="form-control" id="folio">
+                  <input name="id_incidente" type="hidden" class="form-control" id="id_incidente">
+                  <input name="id_empleado" type="hidden" class="form-control" id="id_empleado">
                   <div class="row mb-3">
                       <label for="firstNombre" class="col-md-4 col-lg-3 col-form-label" >Nombre(s)</label>
                       <div class="col-md-8 col-lg-9">
@@ -170,7 +173,7 @@
                   <div class="row mb-3">
                     <label for="lastName" class="col-md-4 col-lg-3 col-form-label">Apellido Materno</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="lastName" type="text" class="form-control" id="lastName" disabled>
+                      <input name="lastName2" type="text" class="form-control" id="lastName2" disabled>
                     </div>
                 </div>
                   <div class="row mb-3">
@@ -182,7 +185,7 @@
                   <div class="row mb-3">
                     <label for="articulo" class="col-md-4 col-lg-3 col-form-label">Artículo</label>
                     <div class="col-md-8 col-lg-9">
-                      <input class="form-control" type="text" placeholder="Nombre del artículo" aria-label="Disabled input example" disabled>
+                      <input class="form-control" id="producto" name="producto" type="text" placeholder="Nombre del artículo" aria-label="Disabled input example" disabled>
                     </div>
                 </div>
                   <div class="row mb-3">
@@ -197,27 +200,19 @@
                       <input name="telephone" type="text" class="form-control" id="telephone" disabled>
                     </div>
                 </div>
-                  <div class="mb-3 row">
-                    <label for="inputProblem" class="col-md-4 col-lg-3 col-form-label">Tipo de problema</label>
+                <div class="row mb-3">
+                    <label for="tipo" class="col-md-4 col-lg-3 col-form-label">Tipo de problema</label>
                     <div class="col-md-8 col-lg-9">
-                        <select class="form-select" aria-label="Default select example" disabled>
-                            <option selected>Elige una opción</option>
-                            <option value="1">Reportes</option>
-                            <option value="2">Aclaración de dudas</option>
-                            <option value="3">Soporte técnico</option>
-                            <option value="4">Cambios y devoluciones</option>
-                            <option value="5">Facturación</option>
-                          </select>
+                      <input name="tipo" type="text" class="form-control" id="tipo" disabled>
                     </div>
-                  </div>
+                </div>
                   <div class="row mb-3">
                     <label for="about" class="col-md-4 col-lg-3 col-form-label">Descripción del problema</label>
                     <div class="col-md-8 col-lg-9">
-                      <textarea name="about" class="form-control" id="about" style="height: 100px">...</textarea>
+                      <textarea name="about" class="form-control" id="about" style="height: 100px" disabled></textarea>
                     </div>
                   </div>
-                  <span>Foto adjuntada...</span>
-                  <img src="https://catinfog.com/wp-content/uploads/2019/01/ticket-supreme-1.jpg" class="img-fluid" alt="...">
+                  <img src="" class="img-fluid" alt="...">
                   
                   <h5 class="card-title">Soporte <span>| Proceso del ticket</span></h5>
                   <div class="mb-3 row">

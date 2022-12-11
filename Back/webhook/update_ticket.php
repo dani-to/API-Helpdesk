@@ -1,7 +1,8 @@
 <?php
 include_once"../control/controlticket.php";
 $params=[
-    "folio" =>'1',
+    "folio" =>$_POST['folio'],
+    "id_empleado" =>$_POST['id_empleado'],
     "estatus" =>'1'
   ];
 $result=updateTicket($params);

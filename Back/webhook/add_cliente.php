@@ -1,5 +1,3 @@
-//ejemplo estatico
-
 <?php    										//abrimos etiqueta php
 include_once"../control/controlcliente.php"; 	//incluimos archivo a donde sera enviado (control) (en este caso es controlcliente.php)
 $params=[  										//abrimos variable array params
