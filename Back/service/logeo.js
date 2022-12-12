@@ -5,7 +5,7 @@ $(document).ready(function(){
         }else if($("#correo").val()=="Cliente@gmail.com"){
             window.location = "./indexCostumer.html";
         }else if($("#correo").val()=="Empleado@gmail.com"){
-            window.location = "./index.html";
+            window.location = "./index.html?id_empleado=${1}";
         }else{
             console.log("Error con api cesar");
         }

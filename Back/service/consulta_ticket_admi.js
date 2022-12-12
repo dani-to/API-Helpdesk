@@ -2,7 +2,6 @@ $(document).ready(function(){
     let prioridad;
     cargaticket();
     solucion();
-    $("#id_empleado").val(1);
 });
 
 
