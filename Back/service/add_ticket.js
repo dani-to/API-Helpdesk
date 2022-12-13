@@ -418,6 +418,7 @@ $(document).ready(function(){
                                                                 console.log(res);
                                                                 let TICKET = JSON.parse(res);
                                                                 $("#folio").val("Tu folio de seguimiento es: "+TICKET[0].folio);
+                                                                $("#nombre")
                                                                 formData.append("folio", TICKET[0].folio);
                                                                 formData.append("correo", $("#eMail").val());
                                                                 $.ajax({

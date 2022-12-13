@@ -2,6 +2,7 @@ $(document).ready(function(){
     let prioridad;
     cargaticket();
     solucion();
+    $("#id_empleado").val(1);
 });
 
 
@@ -35,13 +36,24 @@ function cargaticket(){
                     }else{
                         prioridad="";
                     }
-                    template += `
+                    if(estatus=="PENDIENTE"){
+                        template += `
                     <tr>
                         <td data-label="folio" onclick="cargadatos(${element.folio})">${element.folio}</td>
                         <td data-label="tipo">${element.tipo_problema}</td>
                         <td data-label="estatus">${estatus}</td>
                         <td data-label="prioridad">${prioridad}</td>
                     </tr>`
+                    }else{
+                        template += `
+                    <tr>
+                        <td data-label="folio">${element.folio}</td>
+                        <td data-label="tipo">${element.tipo_problema}</td>
+                        <td data-label="estatus">${estatus}</td>
+                        <td data-label="prioridad">${prioridad}</td>
+                    </tr>`
+                    }
+                    
                 cont++;
                 });
                 $("#tbody_ticket").html(template);
@@ -123,6 +135,7 @@ function solucion(){
         }else{
             console.log("no sale");
         }
+        e.preventDefault();
     });
 
 }
