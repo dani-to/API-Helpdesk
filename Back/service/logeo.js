@@ -5,7 +5,7 @@ $(document).ready(function(){
         }else if($("#correo").val()=="Empleado@gmail.com"){
             window.location = "./index.html";
         }else{
-            console.log("Error con api cesar");
+            console.log("Error de logeo");
         }
         e.preventDefault();
     })   
